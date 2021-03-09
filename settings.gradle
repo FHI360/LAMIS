@@ -1,0 +1,4 @@
+rootProject.name = 'LAMISLite'
+include 'samples-utils'
+project(':samples-utils').projectDir = new File("../Common/Android/utils")
+include ':shapednavigationview'

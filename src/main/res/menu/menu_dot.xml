@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/recencyTesting1"
+        android:orderInCategory="100"
+        android:title="Recency Testing" />
+    <item
+        android:id="@+id/indexTesting"
+        android:orderInCategory="100"
+        android:title="Index Testing" />
+    <item
+        android:id="@+id/enrollment"
+        android:orderInCategory="101"
+        android:title="Patient Registration" />
+
+    <item
+        android:id="@+id/editHts"
+        android:orderInCategory="101"
+        android:title="Edit HIV Testing &amp; Counseling" />
+
+    <item
+        android:id="@+id/editPatien"
+        android:orderInCategory="101"
+        android:title="Edit Patient Registration" />
+
+    <item
+        android:id="@+id/editART"
+        android:orderInCategory="101"
+        android:title="Edit ART Commencement" />
+    <!--<item-->
+    <!--android:id="@+id/editIndex"-->
+    <!--android:orderInCategory="101"-->
+    <!--android:title="Edit Index" />-->
+
+    <!--<item-->
+    <!--android:id="@+id/editSexualContact"-->
+    <!--android:orderInCategory="101"-->
+    <!--android:title="Edit Sexual Contact" />-->
+
+
+</menu>

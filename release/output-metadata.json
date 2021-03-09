@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "org.fhi360.lamis.mobile.lite",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "properties": [],
+      "versionCode": 59,
+      "versionName": "6.9",
+      "enabled": true,
+      "outputFile": "LAMISLite-release.apk"
+    }
+  ]
+}

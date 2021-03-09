@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/idrisoyibo/Documents/idris/LAMISLITE/codes/LAMISLite/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-ldrtl-v17/values-ldrtl-v17.xml",
+            "map": [
+                {
+                    "source": "/Users/idrisoyibo/Documents/idris/LAMISLITE/codes/LAMISLite/shapednavigationview/build/intermediates/packaged_res/release/values-ldrtl-v17/values-ldrtl-v17.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "45",
+                        "endOffsets": "96"
+                    }
+                }
+            ]
+        }
+    ]
+}

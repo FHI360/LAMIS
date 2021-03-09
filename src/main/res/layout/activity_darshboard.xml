@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+
+    <TextView
+        android:id="@+id/totalTested"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:layout_weight="0.7"
+        android:background="@drawable/textviewbackground"
+        android:drawableRight="@drawable/ic_supervisor_account_black_24dp"
+        android:padding="5dp"
+        android:text="Total Tested"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/totalPositive"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:layout_weight="0.7"
+        android:background="@drawable/textviewbackground2"
+        android:drawableRight="@drawable/ic_person_add_black_24dp"
+        android:padding="5dp"
+        android:text="Total Positive"
+
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/totalInitiated"
+        android:layout_width="0dp"
+        android:layout_height="58dp"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:layout_weight="0.7"
+        android:background="@drawable/textviewbackground3"
+        android:drawableRight="@drawable/ic_person_black_24dp"
+        android:padding="5dp"
+        android:text="Total Initiated"
+        android:textStyle="bold" />
+
+</LinearLayout>

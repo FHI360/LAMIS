@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    >
+    <LinearLayout
+        android:background="@android:color/holo_red_light"
+        android:id="@+id/notitop"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp100"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:visibility="visible"
+        >
+        <TextView
+            android:layout_weight="1.6"
+            android:gravity="center"
+            android:id="@+id/notitoptxt"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:padding="2dp"
+            android:text="Elicit partner from index"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/dp15"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bgforpssselector"
+            android:layout_weight="0.7"
+            android:gravity="center"
+            android:id="@+id/notitopOk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="Yes"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/dp12"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_margin="5dp"
+            android:layout_gravity="center"
+            android:background="@drawable/bgforpssselector"
+            android:layout_weight="0.7"
+            android:gravity="center"
+            android:id="@+id/notitopNotnow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="No"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/dp12"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

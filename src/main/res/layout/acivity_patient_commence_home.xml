@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    >
+
+    <Button
+        android:id="@+id/expandableButton1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@android:drawable/arrow_down_float"
+        android:text="Patient Registration"
+        android:textColor="#000" />
+
+    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+        android:id="@+id/expandableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/expandableButton1"
+        android:background="#fff"
+        app:ael_duration="400"
+        app:ael_expanded="false"
+        app:ael_interpolator="bounce"
+        app:ael_orientation="vertical">
+        <include layout="@layout/activity_patient_registration" />
+    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+    <Button
+        android:id="@+id/expandableButton2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/expandableLayout1"
+        android:drawableRight="@android:drawable/arrow_down_float"
+        android:paddingRight="10dp"
+        android:text="ART Commencement"
+        android:textColor="#000" />
+
+    <com.github.aakira.expandablelayout.ExpandableRelativeLayout
+        android:id="@+id/expandableLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/expandableButton2"
+        android:background="#90b77803"
+        app:ael_duration="400"
+        app:ael_expanded="false"
+        app:ael_interpolator="bounce"
+        app:ael_orientation="vertical">
+        <include layout="@layout/activity_commence" />
+    </com.github.aakira.expandablelayout.ExpandableRelativeLayout>
+
+
+
+
+
+    <Button
+        android:id="@+id/finishButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:padding="15dp"
+        android:textAllCaps="true"
+        android:text="Save"
+        android:textSize="18sp"
+        android:background="@drawable/blue_button"
+        android:elevation="2dp"
+        android:textColor="@android:color/white"/>
+
+</RelativeLayout>

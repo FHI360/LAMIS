@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.fhi360.lamis.mobile.lite">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        android:maxSdkVersion="19" />
+
+    <uses-feature android:name="android.hardware.usb.host" />
+
+    <application
+        android:name="BiometricApplication"
+        android:allowBackup="true"
+        android:extractNativeLibs="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/MyMaterialTheme"
+        android:usesCleartextTraffic="true">
+        <!-- Common -->
+        <activity android:name="com.neurotec.samples.app.InfoActivity"></activity>
+        <activity android:name="com.neurotec.samples.app.DirectoryViewer"></activity>
+
+        <!-- Licensing -->
+        <activity
+            android:name="com.neurotec.licensing.gui.ActivationActivity"
+            android:theme="@android:style/Theme.Holo.Light" />
+
+        <!-- Multimodal -->
+        <activity
+            android:name=".Activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.MainActivity"
+            android:hardwareAccelerated="false"
+            android:parentActivityName=".Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:taskAffinity="org.fhi360.lamis.mobile.lite"
+            android:theme="@android:style/Theme.Holo.Light" />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.MainActivity2"
+            android:hardwareAccelerated="false"
+            android:parentActivityName=".Activities.Home"
+            android:screenOrientation="portrait"
+            android:taskAffinity="org.fhi360.lamis.mobile.lite"
+            android:theme="@android:style/Theme.Holo.Light" />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.FingerActivity"
+            android:hardwareAccelerated="true"
+            android:parentActivityName=".Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light" />
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.FingerActivity2"
+            android:hardwareAccelerated="true"
+            android:parentActivityName=".Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light" />
+
+        <!-- Preferences -->
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.MultimodalPreferences"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.fhi360.lamis.mobile.lite.Activities.Home" />
+        </activity>
+
+
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.FingerPreferences"
+            android:label="@string/finger_app_name"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.FingerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.fhi360.lamis.mobile.lite.FingerActivity" />
+        </activity>
+
+
+        <activity
+            android:name=".Activities.PatientRegistration"
+            android:parentActivityName=".Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Fragments.SetUp"
+            android:parentActivityName=".Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.ProfileActivity2"
+            android:parentActivityName=".Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.StatusHistoryActivity"
+            android:parentActivityName=".Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.EditHts"
+            android:parentActivityName=".Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.EditPatient"
+            android:parentActivityName=".Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.EditPatient2"
+            android:parentActivityName=".Activities.PatientRegistration"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.EditIndexSexualContact"
+            android:parentActivityName=".Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.EditIndex"
+            android:parentActivityName=".Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".Activities.RecencyTesting"
+            android:parentActivityName=".Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <activity
+            android:name=".Activities.RecencyTesting2"
+            android:parentActivityName=".Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.EditPatient3"
+            android:parentActivityName=".Activities.ProfileActivity2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.ClientTracking2"
+            android:parentActivityName=".Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ProfileActivity"
+            android:parentActivityName=".Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.ArtCommencement"
+            android:parentActivityName=".Activities.PatientRegistration"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.ArtCommencement2"
+            android:parentActivityName=".Activities.PatientRegistration"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.HtsRegistration"
+            android:parentActivityName=".Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.CreateAccount"
+            android:parentActivityName=".Activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.EditArtCommencement"
+            android:parentActivityName=".Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.EditArtCommencement2"
+            android:parentActivityName=".Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.Activation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.IndexTesting"
+            android:parentActivityName=".Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+    </application>
+
+</manifest>

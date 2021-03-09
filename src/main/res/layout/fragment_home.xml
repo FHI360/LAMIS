@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
+
+
+    <HorizontalScrollView
+        android:id="@+id/navContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:scrollbars="none">
+
+        <com.library.NavigationBar
+            android:id="@+id/navBar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:padding="6dp"
+            app:central_line_height="1dp"
+            app:enable_border="true"
+            app:only_border="false"
+            app:tab_border_color_array="@array/border_state_colors"
+            app:tab_color_array="@array/indicator_colors"
+            app:tab_indicator_color="@color/sky_blue"
+            app:tab_padding="48dp"
+            app:tab_strok_width="3dp"
+            app:tab_text_color_array="@array/text_state_colors"
+            app:tab_text_size="18sp" />
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_next_prev"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/navContainer"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_prev"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:background="@drawable/roundedbutton"
+            android:text="prev"
+            android:padding="10dp"
+            android:clickable="false"
+            android:textColor="#fff" />
+
+         <Button
+            android:id="@+id/btn_next"
+            android:layout_marginLeft="@dimen/dp20"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:background="@drawable/roundedbutton"
+            android:text="Next"
+            android:clickable="false"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+
+    <include
+        layout="@layout/step_one"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_next_prev" />
+
+    <include
+        layout="@layout/step_two"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_next_prev"
+        android:visibility="gone" />
+
+    <include
+        layout="@layout/step_three"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_next_prev"
+        android:visibility="gone" />
+
+    <include
+        layout="@layout/step_four"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll_next_prev"
+        android:visibility="gone" />
+</RelativeLayout>

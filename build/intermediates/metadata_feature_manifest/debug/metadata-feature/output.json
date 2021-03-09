@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "applicationId": "org.fhi360.lamis.mobile.lite",
+  "variantType": "BASE_APK",
+  "elements": [
+    {
+      "outputType": {
+        "type": "METADATA_FEATURE_MANIFEST"
+      },
+      "apkData": {
+        "type": "MAIN",
+        "splits": [],
+        "versionCode": 58,
+        "versionName": "6.8",
+        "outputFile": "LAMISLite-debug.apk",
+        "fullName": "debug",
+        "baseName": "debug",
+        "dirName": ""
+      },
+      "path": "AndroidManifest.xml",
+      "properties": {}
+    }
+  ]
+}

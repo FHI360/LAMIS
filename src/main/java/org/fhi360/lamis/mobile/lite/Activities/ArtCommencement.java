@@ -1,0 +1,367 @@
+package org.fhi360.lamis.mobile.lite.Activities;
+
+import android.annotation.SuppressLint;
+import android.app.DatePickerDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
+import android.support.annotation.Nullable;
+import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatSpinner;
+import android.text.Html;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import org.fhi360.lamis.mobile.lite.Domains.Facility2;
+import org.fhi360.lamis.mobile.lite.Domains.Regimentype;
+import org.fhi360.lamis.mobile.lite.R;
+
+import com.shashank.sony.fancytoastlib.FancyToast;
+
+import org.fhi360.lamis.mobile.lite.DAO.ClinicDAO;
+import org.fhi360.lamis.mobile.lite.DAO.HtsDAO;
+import org.fhi360.lamis.mobile.lite.DAO.PatientDAO;
+import org.fhi360.lamis.mobile.lite.DAO.RegimensDAO;
+import org.fhi360.lamis.mobile.lite.Domains.Clinic;
+import org.fhi360.lamis.mobile.lite.Domains.Patient;
+import org.fhi360.lamis.mobile.lite.Domains.Patient2;
+import org.fhi360.lamis.mobile.lite.Domains.Regimens;
+import org.fhi360.lamis.mobile.lite.Utils.PrefManager;
+import org.fhi360.lamis.mobile.lite.Utils.SettingConfig;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.UUID;
+
+public class ArtCommencement extends AppCompatActivity {
+    private EditText nextAppointment,
+            systolic,
+            height,
+            bodyWeight,
+            dateVisit,
+            hospitalNumArt;
+    private Spinner tbStatusSpinner,
+            funcStatus,
+            regimenline,regimen;
+    private Button save;
+    private TextView textViewfullName;
+    private Calendar myCalendar = Calendar.getInstance();
+    private String lgaName;
+    private String facilityName;
+    private String stateName;
+    private String lgaId;
+    private String steteId;
+    private String facilityId;
+    private String unigueId;
+    private PrefManager session;
+    private String deviceconfigId;
+    private HashMap<String, String> user = null;
+    // private HashMap<String, String> hospital = null;
+    private SettingConfig setttings = new SettingConfig();
+    private String regimenIds;
+    private String patientId = "";
+    private Clinic clinic;
+
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.art_commence);
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources()
+                .getColor(R.color.colorPrimaryDark)));
+        nextAppointment = findViewById(R.id.nextAppointment);
+        systolic = findViewById(R.id.bp);
+        height = findViewById(R.id.height);
+        textViewfullName = findViewById(R.id.fullName);
+        bodyWeight = findViewById(R.id.bodyWeight);
+        dateVisit = findViewById(R.id.dateVisit);
+        hospitalNumArt = findViewById(R.id.hospitalNum);
+        tbStatusSpinner = findViewById(R.id.tbStatus);
+        funcStatus = findViewById(R.id.funcStatus);
+        hospitalNumArt.setEnabled(false);
+
+        regimen = findViewById(R.id.regimen);
+        regimenline = findViewById(R.id.regimentype);
+        save = findViewById(R.id.finishButton);
+
+        session = new PrefManager(getApplicationContext());
+        user = session.getHtsDetails();
+        // hospital = session.getHospitalNumber();
+        hospitalNumArt.setEnabled(false);
+        HashMap<String, String> user1 = session.getProfileDetails();
+        final String htsId = user1.get("htsId");
+        String names = "";
+        if (user != null) {
+            facilityName = user.get("faciltyName");
+            lgaId = user.get("lgaId");
+            steteId = user.get("stateId");
+            facilityId = user.get("facilityId");
+            stateName = user.get("steteName");
+            lgaName = user.get("lgaNam");
+            deviceconfigId = user.get("deviceconfig_id");
+        }
+
+        final DatePickerDialog.OnDateSetListener date2 = (view, year, monthOfYear, dayOfMonth) -> {
+            // TODO Auto-generated method stub
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            updateLabel();
+        };
+
+
+        dateVisit.setOnClickListener(v -> {
+            // TODO Auto-generated method stub
+            final DatePickerDialog mDatePicker = new DatePickerDialog(ArtCommencement.this, date2, myCalendar
+                    .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                    myCalendar.get(Calendar.DAY_OF_MONTH));
+            mDatePicker.show();
+
+
+        });
+        final DatePickerDialog.OnDateSetListener date = (view, year, monthOfYear, dayOfMonth) -> {
+            // TODO Auto-generated method stub
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            updateLabe2();
+        };
+
+
+        nextAppointment.setOnClickListener(v -> {
+            // TODO Auto-generated method stub
+            final DatePickerDialog mDatePicker = new DatePickerDialog(ArtCommencement.this, date, myCalendar
+                    .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                    myCalendar.get(Calendar.DAY_OF_MONTH));
+            //mDatePicker.getDatePicker().setMaxDate(System.currentTimeMillis());
+            mDatePicker.show();
+
+
+        });
+
+        final Patient patient = new PatientDAO(this).findPatientHtsId(Long.parseLong(htsId));
+        if (patient != null) {
+            patientId = patient.getPatientId() + "";
+            if (patient.getHospitalNum() == null) {
+                HashMap<String, String> user = session.getProfileDetails();
+                String clientcode = user.get("clientcode");
+                hospitalNumArt.setText(clientcode);
+            } else {
+                hospitalNumArt.setText(patient.getHospitalNum());
+            }
+            unigueId = patient.getUniqueId();
+            clinic = new ClinicDAO(this).getAllClinicByPatientId(patient.getPatientId());
+            if (clinic != null) {
+                nextAppointment.setText(clinic.getNextAppointment());
+                systolic.setText(clinic.getBp());
+                height.setText(String.valueOf(clinic.getHeight()));
+                bodyWeight.setText(String.valueOf(clinic.getBodyWeight()));
+                dateVisit.setText(clinic.getDateVisit());
+                SettingConfig.setSpinText(tbStatusSpinner, clinic.getTbStatus());
+                SettingConfig.setSpinText(funcStatus, clinic.getFuncStatus());
+                SettingConfig.setSpinText(regimenline, String.valueOf(clinic.getRegimentype()));
+                SettingConfig.setSpinText(regimen, String.valueOf(clinic.getRegimen()));
+            }
+            try {
+                String firstLetter = String.valueOf(patient.getOtherNames().charAt(0)).toUpperCase() + patient.getOtherNames().toLowerCase().substring(1);
+                names = patient.getSurname().toUpperCase() + "   " + firstLetter;
+                textViewfullName.setText(Html.fromHtml("<font color=\"#000000\">" + "Name:  " + "</font>" + "<font color=\"#CD853F\">" + names + "</font>"));
+            } catch (Exception ignored) {
+
+            }
+        } else {
+            showAlert();
+        }
+        final ArrayList regimensId = new ArrayList<>();
+        ArrayList regimenstype = new ArrayList<>();
+        ArrayList regimens3 = new ArrayList<>();
+        List<Regimens> regimens = new RegimensDAO(this).getRegimentType();
+        for (Regimens regimens1 : regimens) {
+            regimensId.add(regimens1.getRegimentypeId());
+            regimenstype.add(regimens1.getRegimentype());
+        }
+        final ArrayAdapter<String> districtAdapter = new ArrayAdapter<>(getApplicationContext(),
+                R.layout.spinner_items, regimenstype);
+        districtAdapter.setDropDownViewResource(R.layout.color_spinner_layout);
+        districtAdapter.notifyDataSetChanged();
+        regimenline.setAdapter(districtAdapter);
+        regimenline.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                regimenIds = (String) regimensId.get(position);
+                System.out.println("regimenIds" + regimenIds);
+              //  saveRegimenTypeId(regimenIds);
+                ArrayList<Regimens> regimens1;
+                ArrayList regimens2 = new ArrayList<>();
+                regimens1 = new RegimensDAO(getApplicationContext()).getByRegimen(regimenIds);
+                for (Regimens regimens4 : regimens1) {
+                    regimens2.add(regimens4.getRegimen());
+                    regimens3.add(regimens4.getRegimenId());
+                }
+                final ArrayAdapter<String> districtAdapter = new ArrayAdapter<>(getApplicationContext(),
+                        R.layout.spinner_items, regimens2);
+                districtAdapter.setDropDownViewResource(R.layout.color_spinner_layout);
+                districtAdapter.notifyDataSetChanged();
+                regimen.setAdapter(districtAdapter);
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+
+        save.setOnClickListener(v -> {
+            if (validateInput(hospitalNumArt.getText().toString(), dateVisit.getText().toString(), nextAppointment.getText().toString())) {
+                if (patient != null) {
+                    Clinic clinic = new Clinic();
+                    if (new ClinicDAO(getApplicationContext()).checkIfClinicExist2(patient.getPatientId())) {
+                        FancyToast.makeText(getApplicationContext(), "ART commencement arleady exist", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
+                    } else {
+                        Patient2 patient1 = new Patient2();
+                        patient1.setPatientId(patient.getPatientId());
+                        clinic.setPatient(patient1);
+                        clinic.setFacilityId(Long.parseLong(facilityId));
+                        clinic.setDateVisit(dateVisit.getText().toString());
+                        clinic.setFuncStatus(funcStatus.getSelectedItem().toString());
+                        clinic.setTbStatus(tbStatusSpinner.getSelectedItem().toString());
+                        clinic.setViralLoad("");
+                        clinic.setDeviceconfigId(Long.parseLong(deviceconfigId));
+
+                        clinic.setRegimentype(regimenline.getSelectedItem().toString());
+                        clinic.setRegimen(regimen.getSelectedItem().toString());
+
+                        if (bodyWeight.getText().toString().equals("")) {
+                            clinic.setBodyWeight(0.0);
+                        } else {
+                            clinic.setBodyWeight(Double.parseDouble(bodyWeight.getText().toString()));
+                        }
+                        if (height.getText().toString().equals("")) {
+                            clinic.setHeight(0.0);
+                        } else {
+                            clinic.setHeight(Double.parseDouble(height.getText().toString()));
+                        }
+                        clinic.setUuid(new PrefManager(getApplicationContext()).getUuId().get("uuid"));
+                        clinic.setClinicUuid(UUID.randomUUID().toString());
+                        new HtsDAO(getApplicationContext()).updateStartDate(dateVisit.getText().toString(), htsId);
+                        clinic.setWaist(0);
+                        clinic.setBp(systolic.getText().toString());
+                        clinic.setPregnant("0");
+                        clinic.setLmp("");
+                        clinic.setBreastfeeding(0);
+                        clinic.setNextAppointment(nextAppointment.getText().toString());
+                        clinic.setNotes("");
+                        new ClinicDAO(getApplicationContext()).insertClinic(clinic);
+                        FancyToast.makeText(getApplicationContext(), "ART saved successfully", FancyToast.LENGTH_LONG, FancyToast.SUCCESS, false).show();
+                    }
+                } else {
+                    FancyToast.makeText(getApplicationContext(), "ART can not be completed please enroll client", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
+
+                }
+
+            }
+        });
+
+
+    }
+
+
+    private void updateLabel() {
+        String myFormat = "yyyy-MM-dd";
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        dateVisit.setText(sdf.format(myCalendar.getTime()));
+    }
+
+    private void updateLabe2() {
+        String myFormat = "yyyy-MM-dd";
+        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+        nextAppointment.setText(sdf.format(myCalendar.getTime()));
+    }
+
+    private void showAlert() {
+        LayoutInflater li = LayoutInflater.from(getApplicationContext());
+        View promptsView = li.inflate(R.layout.pop_up3, null);
+        final AlertDialog dialog = new AlertDialog.Builder(this).create();
+        dialog.setView(promptsView);
+        final TextView notitopOk;
+        notitopOk = promptsView.findViewById(R.id.notitopOk);
+        notitopOk.setOnClickListener(v -> {
+            Intent intent = new Intent(getApplicationContext(), PatientRegistration.class);
+            startActivity(intent);
+            dialog.dismiss();
+        });
+
+        dialog.setCancelable(false);
+        dialog.show();
+    }
+
+    private boolean validateInput(String hospitalNumber1, String dateVisit1, String dateNextAppointment) {
+        if (dateVisit1.isEmpty()) {
+            dateVisit.setError("Enter Date visit");
+            FancyToast.makeText(getApplicationContext(), "Enter date visit", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
+            return false;
+        } else if (dateNextAppointment.isEmpty()) {
+            nextAppointment.setError("Enter date next appointment");
+            FancyToast.makeText(getApplicationContext(), "Enter date next appointment", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
+            return false;
+        } else if (hospitalNumber1.isEmpty()) {
+            hospitalNumArt.setError("Enter Hospital number");
+            FancyToast.makeText(getApplicationContext(), "Enter Hospital number", FancyToast.LENGTH_LONG, FancyToast.ERROR, false).show();
+            return false;
+        }
+        return true;
+
+    }
+
+    public void saveRegimenTypeId(String regimentypId) {
+        SharedPreferences sharedPreferences = this.getSharedPreferences("saveregimentype", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.putString("regimentypId", regimentypId);
+        editor.apply();
+    }
+
+    public HashMap<String, String> getGetRegimenTypeIdId() {
+        HashMap<String, String> regimenId = new HashMap<>();
+        SharedPreferences sharedPreferences = this.getSharedPreferences("saveregimentype", Context.MODE_PRIVATE);
+        regimenId.put("regimentypId", sharedPreferences.getString("regimentypId", null));
+        return regimenId;
+    }
+
+
+    public void saveRegimenId(String regimenIdsd) {
+        SharedPreferences sharedPreferences = this.getSharedPreferences("saveregimen", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.putString("regimenId", regimenIdsd);
+        editor.apply();
+    }
+
+    public HashMap<String, String> getGetRegimenId() {
+        HashMap<String, String> regimenId = new HashMap<>();
+        SharedPreferences sharedPreferences = this.getSharedPreferences("saveregimen", Context.MODE_PRIVATE);
+        regimenId.put("regimenId", sharedPreferences.getString("regimenId", null));
+        return regimenId;
+    }
+
+}
+
+
+

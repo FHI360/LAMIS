@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.fhi360.lamis.mobile.lite"
+    android:targetSandboxVersion="2"
+    android:versionCode="59"
+    android:versionName="6.9" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="28" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        android:maxSdkVersion="19" />
+
+    <uses-feature android:name="android.hardware.usb.host" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name="org.fhi360.lamis.mobile.lite.BiometricApplication"
+        android:allowBackup="true"
+        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+        android:extractNativeLibs="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/MyMaterialTheme"
+        android:usesCleartextTraffic="true" >
+
+        <!-- Common -->
+        <activity android:name="com.neurotec.samples.app.InfoActivity" />
+        <activity android:name="com.neurotec.samples.app.DirectoryViewer" />
+
+        <!-- Licensing -->
+        <activity
+            android:name="com.neurotec.licensing.gui.ActivationActivity"
+            android:theme="@android:style/Theme.Holo.Light" />
+
+        <!-- Multimodal -->
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.MainActivity"
+            android:hardwareAccelerated="false"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:taskAffinity="org.fhi360.lamis.mobile.lite"
+            android:theme="@android:style/Theme.Holo.Light" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.MainActivity2"
+            android:hardwareAccelerated="false"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:taskAffinity="org.fhi360.lamis.mobile.lite"
+            android:theme="@android:style/Theme.Holo.Light" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.FingerActivity"
+            android:hardwareAccelerated="true"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.FingerActivity2"
+            android:hardwareAccelerated="true"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light" />
+
+        <!-- Preferences -->
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.MultimodalPreferences"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.fhi360.lamis.mobile.lite.Activities.Home" />
+        </activity>
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.FingerPreferences"
+            android:label="@string/finger_app_name"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.FingerActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Holo.Light" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="org.fhi360.lamis.mobile.lite.FingerActivity" />
+        </activity>
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.PatientRegistration"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Fragments.SetUp"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity2"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.StatusHistoryActivity"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditHts"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditPatient"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditPatient2"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.PatientRegistration"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditIndexSexualContact"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditIndex"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.RecencyTesting"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.RecencyTesting2"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditPatient3"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity2"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.ClientTracking2"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.ArtCommencement"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.PatientRegistration"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.ArtCommencement2"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.PatientRegistration"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.HtsRegistration"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.Home"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.CreateAccount"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditArtCommencement"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.EditArtCommencement2"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.Activation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="org.fhi360.lamis.mobile.lite.Activities.IndexTesting"
+            android:parentActivityName="org.fhi360.lamis.mobile.lite.Activities.ProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name="com.karumi.dexter.DexterActivity"
+            android:theme="@style/Dexter.Internal.Theme.Transparent" />
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+    </application>
+
+</manifest>

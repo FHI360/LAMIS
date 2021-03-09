@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.ashutosh.progress-nevigation-bar:library:1.0.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0c687a686f0c106a94707928c3a9793d/library-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0c687a686f0c106a94707928c3a9793d/library-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0c687a686f0c106a94707928c3a9793d/library-1.0.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ashutosh.progress-nevigation-bar/library/1.0.0/9b0de804c8cfba72fda498b63315ca1dcdcb4d1d/library-1.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.ashutosh.progress-nevigation-bar/library/1.0.0/5164664c19a4786c79c19d852ecfb0f0bf5c1718/library-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

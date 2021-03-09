@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:id="@+id/activity_step_two"
+    android:orientation="vertical">
+    <android.support.v7.widget.CardView
+        android:id="@+id/personalDetailsCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:stretchColumns="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pre-Test Counseling"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="#000" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Knowledge Assessment"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:id="@+id/knowledgeAssessmentTest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:gravity="start"
+                android:text="Previously Tested HIV Negative"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/knowledgeAssessment1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_dropdown"
+            android:entries="@array/oneAndTwo"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:id="@+id/clientPregnant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:gravity="start"
+                android:text="Cilent Pregnant (Test and ensure linkage to PMCT Program)"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/knowledgeAssessment2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_dropdown"
+            android:entries="@array/oneAndTwo"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:gravity="start"
+                android:text="Client Informed about HIV Transmission routes"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/knowledgeAssessment3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_dropdown"
+            android:entries="@array/oneAndTwo"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:gravity="start"
+                android:text="Client Informed about risk factors for HIV Transmission"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/knowledgeAssessment4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_dropdown"
+            android:entries="@array/oneAndTwo"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:gravity="start"
+                android:text="Client Informed on prevention of HIV transmission methods"
+                android:textColor="#000" />
+
+        </TableRow>
+
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/knowledgeAssessment5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_dropdown"
+            android:entries="@array/oneAndTwo"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:gravity="start"
+                android:text="Client Informed about possible test results"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/knowledgeAssessment6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_dropdown"
+            android:entries="@array/oneAndTwo"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:gravity="start"
+                android:text="Informed consent for HIV testing given"
+                android:textColor="#000" />
+
+        </TableRow>
+
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/knowledgeAssessment7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_dropdown"
+            android:entries="@array/oneAndTwo"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HIV Risk Assessment"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:id="@+id/test_in_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ever had sexual intercorse"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/riskAssessment1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_dropdown"
+            android:entries="@array/oneAndTwo"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Blood transfusion in last 3 months"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/riskAssessment2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_dropdown"
+            android:entries="@array/oneAndTwo"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unprotected sex with casual partner in last 3 months"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/riskAssessment3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:entries="@array/oneAndTwo"
+            android:background="@drawable/bg_dropdown"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unprotected sex with regular partner in last 3 months"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/riskAssessment4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_dropdown"
+            android:entries="@array/oneAndTwo"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="STI in last 3 months"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/riskAssessment5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_dropdown"
+            android:entries="@array/oneAndTwo"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="10dp">
+
+            <TextView
+
+                android:layout_width="387dp"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="More than 1 sex partner in last 3 months"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/riskAssessment6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_dropdown"
+            android:entries="@array/oneAndTwo"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Clinical TB Screening"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Current Cough"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/tbScreening1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:entries="@array/oneAndTwo"
+            android:spinnerMode="dropdown"
+            android:background="@drawable/bg_dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Weight Loss"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/tbScreening2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:entries="@array/oneAndTwo"
+            android:background="@drawable/bg_dropdown"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:gravity="start"
+                android:text="Fever"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/tbScreening3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:entries="@array/oneAndTwo"
+            android:background="@drawable/bg_dropdown"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:gravity="start"
+                android:text="Night Sweat"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/tbScreening4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/bg_dropdown"
+            android:entries="@array/oneAndTwo"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="10dp">
+
+            <CheckBox
+                android:id="@+id/tbReferred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Referred to TB Service"
+
+                />
+
+
+        </TableRow>
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Syndromic STI Screening"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </TableRow>
+
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:id="@+id/stiScreening1F"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Female: Complaints of Lower abdominal pains with or without vaginal discharge?"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/stiScreening1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:entries="@array/oneAndTwo"
+            android:gravity="center"
+            android:background="@drawable/bg_dropdown"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:id="@+id/stiScreening1F1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Female: Complaints of Vaginal discharge or burning when urinating?"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/stiScreening2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:entries="@array/oneAndTwo"
+            android:gravity="center"
+            android:background="@drawable/bg_dropdown"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:gravity="start"
+                android:text="Male: Complaints of Urethral discharge or burning when urinating?"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/stiScreening3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:entries="@array/oneAndTwo"
+            android:gravity="center"
+            android:background="@drawable/bg_dropdown"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:gravity="start"
+                android:text="Male: Complaints of Scrotal swelling and pain"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/stiScreening4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:entries="@array/oneAndTwo"
+            android:gravity="center"
+            android:background="@drawable/bg_dropdown"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+        <TableRow android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:gravity="start"
+                android:text="Complain of genital score(s)"
+                android:textColor="#000" />
+
+
+        </TableRow>
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/stiScreening5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:entries="@array/oneAndTwo"
+            android:gravity="center"
+            android:background="@drawable/bg_dropdown"
+            android:spinnerMode="dropdown"
+            android:textAlignment="center" />
+
+
+        <TableRow android:padding="5dp">
+
+            <CheckBox
+                android:id="@+id/stiReferred"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Referred to Syndromic STI  Management" />
+
+
+        </TableRow>
+
+
+    </TableLayout>
+    </android.support.v7.widget.CardView>
+</ScrollView>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: :neurotec-biometrics-client-android:@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5b7375ca673513b42b7b2f4f150a1e74/neurotec-biometrics-gui-android/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5b7375ca673513b42b7b2f4f150a1e74/neurotec-biometrics-gui-android/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5b7375ca673513b42b7b2f4f150a1e74/neurotec-biometrics-gui-android/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

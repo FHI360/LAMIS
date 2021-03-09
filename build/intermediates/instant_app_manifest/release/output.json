@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "applicationId": "org.fhi360.lamis.mobile.lite",
+  "variantType": "BASE_APK",
+  "elements": [
+    {
+      "outputType": {
+        "type": "INSTANT_APP_MANIFEST"
+      },
+      "apkData": {
+        "type": "MAIN",
+        "splits": [],
+        "versionCode": 59,
+        "versionName": "6.9",
+        "outputFile": "LAMISLite-release.apk",
+        "fullName": "release",
+        "baseName": "release",
+        "dirName": ""
+      },
+      "path": "AndroidManifest.xml",
+      "properties": {
+        "packageId": "org.fhi360.lamis.mobile.lite",
+        "split": "",
+        "minSdkVersion": "21"
+      }
+    }
+  ]
+}

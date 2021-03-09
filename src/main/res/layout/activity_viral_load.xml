@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/vrialaod"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/personalDetailsCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            android:focusableInTouchMode="false"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <!--            <LinearLayout-->
+            <!--                android:layout_width="fill_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="@dimen/dp10"-->
+            <!--                android:orientation="horizontal">-->
+
+            <!--                <android.support.design.widget.TextInputLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:layout_marginBottom="8dp"-->
+            <!--                    android:background="@drawable/edit_text_background"-->
+            <!--                    android:paddingTop="2dp"-->
+            <!--                    android:paddingBottom="4dp">-->
+
+            <!--                    <EditText-->
+            <!--                        android:id="@+id/recencyNumber"-->
+            <!--                        android:layout_width="match_parent"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:background="@null"-->
+            <!--                        android:drawableTint="#421C52"-->
+            <!--                        android:editable="false"-->
+            <!--                        android:hint="Recency Number"-->
+            <!--                        android:paddingLeft="10dp"-->
+            <!--                        android:paddingTop="2dp"-->
+            <!--                        android:paddingRight="10dp"-->
+            <!--                        android:paddingBottom="10dp"-->
+            <!--                        android:singleLine="true" />-->
+            <!--                </android.support.design.widget.TextInputLayout>-->
+            <!--            </LinearLayout>-->
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:padding="5dp"
+                    android:text="Type of sample"
+                    android:textColor="#000" />
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/typesample"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dropdown"
+                android:entries="@array/typeofsample"
+                android:padding="10dp"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/edit_text_background"
+                    android:padding="5dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="4dp">
+
+                    <EditText
+                        android:id="@+id/dateSampleCollected"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:clickable="true"
+                        android:drawableTint="#421C52"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint="Date Sample Collected"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/edit_text_background"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="4dp">
+
+                    <EditText
+                        android:id="@+id/dateSampleTest"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:clickable="true"
+                        android:drawableTint="#421C52"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint="Date Sample Test"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/edit_text_background"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="4dp">
+
+                    <EditText
+                        android:id="@+id/dateTestDone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:clickable="true"
+                        android:drawableTint="#421C52"
+                        android:editable="false"
+                        android:focusable="false"
+                        android:hint="Date Test Done"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="2dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="10dp"
+                        android:singleLine="true" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/edit_text_background"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="4dp">
+
+                    <EditText
+                        android:id="@+id/viralLoadResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:hint="Viral Load Result"
+                        android:inputType="number"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_10sdp" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/edit_text_background"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="4dp">
+
+                    <EditText
+                        android:id="@+id/finalViralLoadRsult"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start"
+                        android:hint="Final Recency  Result"
+                        android:inputType="number"
+                        android:textColor="#000"
+                        android:textSize="@dimen/_10sdp" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</ScrollView>

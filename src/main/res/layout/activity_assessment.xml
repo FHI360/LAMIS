@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ristassessment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/personalDetailsCard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="20dp"
+            android:focusableInTouchMode="false"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Have you had unprotected/condomless penetrative sex (vaginal, anal, or oral) in the last 6 months?"
+                    android:textColor="#000" />
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/question2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dropdown"
+                android:entries="@array/oneAndTwo"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Have you had more than one sexual partner known or unknown HIV positive status in the last 6
+months?"
+                    android:textColor="#000" />
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/question3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dropdown"
+                android:entries="@array/oneAndTwo"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Have you been forced to have sex against your will (sexual abuse or rape) in the last 6 months or
+since your last HIV test?"
+                    android:textColor="#000" />
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/question4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dropdown"
+                android:entries="@array/oneAndTwo"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Have you paid for or received gratification / sold sex within the last 6 months?"
+                    android:textColor="#000" />
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/question5"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dropdown"
+                android:entries="@array/oneAndTwo"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Do you currently have or have you been treated for any STI/STD in the last 6 month?"
+                    android:textColor="#000" />
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/question6"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dropdown"
+                android:entries="@array/oneAndTwo"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
+
+
+            <LinearLayout
+
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/havebeen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Have you been treated or are you currently on treatment for STI YES OR NO"
+                    android:textColor="#000" />
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/question7"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dropdown"
+                android:entries="@array/oneAndTwo"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
+
+
+            <CheckBox
+                android:id="@+id/sti1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Gonorrhea" />
+
+            <CheckBox
+                android:id="@+id/sti2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Chlamydia" />
+
+
+            <CheckBox
+                android:id="@+id/sti3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Syphilis" />
+
+            <CheckBox
+                android:id="@+id/sti4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Herpes" />
+
+            <CheckBox
+                android:id="@+id/sti5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Anal" />
+
+            <CheckBox
+                android:id="@+id/sti6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Genital Warts of HPV" />
+
+            <CheckBox
+                android:id="@+id/sti7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Viral Hepatitis" />
+
+
+            <CheckBox
+                android:id="@+id/sti8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:text="Tuberculosis (TB)" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Have you had the following symptoms in the last 6 months?"
+                    android:textColor="#000" />
+
+
+            </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="a. Persistent and unresolved cough >2 weeks, with weight loss, night sweats"
+                    android:textColor="#000" />
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/question8"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dropdown"
+                android:entries="@array/oneAndTwo"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="b. Prolonged and unresolved skin rash"
+                    android:textColor="#000" />
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/question9"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dropdown"
+                android:entries="@array/oneAndTwo"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Have you injected drugs or Do you have a sexual or needle sharing partner with a known or
+Unknown HIV positive status?"
+                    android:textColor="#000" />
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/question10"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dropdown"
+                android:entries="@array/oneAndTwo"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Have you had a blood transfusion since your last HIV test?"
+                    android:textColor="#000" />
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/question11"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dropdown"
+                android:entries="@array/oneAndTwo"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="Have you had Herpes zoster in the last 2 years?"
+                    android:textColor="#000" />
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/question12"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dropdown"
+                android:entries="@array/oneAndTwo"
+                android:spinnerMode="dropdown"
+                android:textAlignment="center" />
+
+
+            <Button
+                android:id="@+id/save"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/blue_button"
+                android:elevation="2dp"
+                android:padding="16dp"
+                android:text="Save"
+                android:textColor="@android:color/white"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</ScrollView>

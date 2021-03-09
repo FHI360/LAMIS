@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:visibility="gone"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/subject_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20sdp"
+            android:editable="false"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="140dip"
+                android:layout_marginTop="15dip"
+                android:layout_marginEnd="10dip"
+                android:layout_marginBottom="5dip"
+                android:paddingLeft="10dip"
+                android:paddingTop="5dip"
+                android:paddingRight="10dip"
+                android:paddingBottom="5dip">
+
+                <ImageView
+                    android:id="@+id/finger"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/hand" />
+
+                <TextView
+                    android:id="@+id/finger_counter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dip"
+                    android:paddingTop="5dip"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="30dip" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:paddingBottom="20dip">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/multimodal_button_enroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_20sdp"
+                    android:layout_marginTop="10dip"
+                    android:layout_marginEnd="10dip"
+                    android:layout_weight="1"
+                    android:background="@drawable/round_button"
+                    android:text="Enroll"
+                    android:textColor="@color/white" />
+
+                <!--                <Button-->
+                <!--                    android:id="@+id/multimodal_button_verify"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_margin="@dimen/_20sdp"-->
+                <!--                    android:layout_marginLeft="10dip"-->
+                <!--                    android:layout_marginTop="10dip"-->
+                <!--                    android:layout_marginEnd="10dip"-->
+                <!--                    android:layout_marginRight="20dip"-->
+                <!--                    android:layout_weight="1"-->
+                <!--                    android:background="@drawable/round_button"-->
+                <!--                    android:text="Verify"-->
+                <!--                    android:textColor="@color/white" />-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
