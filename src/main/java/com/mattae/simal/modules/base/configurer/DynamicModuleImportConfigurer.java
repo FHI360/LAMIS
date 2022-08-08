@@ -189,9 +189,8 @@ public class DynamicModuleImportConfigurer implements AcrossContextConfigurer {
                 if (config != null) {
                     List<Dependency> deps = config.getDependencies();
                     List<Map<String, Object>> dependencies = config.getDependencies().stream()
-                        .flatMap(d -> jdbcTemplate.queryForList(
-                                "select id, version installed, ? required, active, name from module where name = ?",
-                                d.getVersion(), d.getName())
+                        .flatMap(d -> jdbcTemplate.queryForList("select id, version installed, ? required, active, name from module where name = ?",
+                            d.getVersion(), d.getName())
                             .stream())
                         .collect(Collectors.toList());
                     boolean valid = dependencies.stream()

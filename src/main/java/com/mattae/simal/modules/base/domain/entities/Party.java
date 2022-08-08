@@ -1,5 +1,4 @@
 package com.mattae.simal.modules.base.domain.entities;
-
 import com.blazebit.persistence.view.AttributeFilter;
 import com.blazebit.persistence.view.EntityView;
 import com.blazebit.persistence.view.IdMapping;
@@ -12,7 +11,6 @@ import lombok.ToString;
 import org.hibernate.annotations.ResultCheckStyle;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.HashSet;
